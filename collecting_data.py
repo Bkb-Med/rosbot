@@ -1,5 +1,14 @@
 #!/usr/bin/env python 
-__author__='MED BKB'
+__author__='mhamed boukbab'
+
+'''« 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+The Software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the Software.
+ »'''
 
 import pygame as pg
 import rospy
@@ -9,11 +18,6 @@ import numpy as np
 import os
 from publish_tuto.msg import velo
 from sensor_msgs.msg import CompressedImage
-#sim Vrep from sensor_msgs.msg import Image--from cv_bridge import CvBridge
-#from sim_ws.msg import velocity
-#from std_msgs.msg import Float32
-#pygame
-
 
 class Coll_TrainingData(object):
     def __init__(self,st_tick):
@@ -34,41 +38,26 @@ class Coll_TrainingData(object):
         self.msgValue=velo()
         self.X = np.empty((0, self.input_size))
         self.y = np.empty((0, 4))
-
-        
     def img_bridge(self,msg):
         try:
-            
             np_arr = np.fromstring(msg.data, np.uint8)
             image_np = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
-
-            ########=====sim Vrep=== # convert sensor_msgs/Image to OpenCV Image
-            # bridge = CvBridge()
-            # orig = bridge.imgmsg_to_cv2(msg, "bgr8")
             orig = cv2.flip(image_np,-1)
-            
             orig = cv2.resize( orig , None, fx=0.5, fy=0.5)
-        #print orig.shape
             img = cv2.cvtColor(orig, cv2.COLOR_BGR2GRAY)
             cv2.imshow('image', img)
             self.collecting(img)
             self.pub.publish(self.msgValue)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 return
-          
         except Exception as err:
             print err
-
-    def collecting(self,img):  
-        
-        
+    def collecting(self,img): 
         height,width =img.shape
         roi = img[int(height/2):height, :]
         temp_array = roi.reshape(1, int(height/2) * width).astype(np.float32)
-            
         self.frame += 1
         self.total_frame += 1
-
         for event in pg.event.get():
                 key_input = pg.key.get_pressed()
                 if event.type==pg.QUIT:
@@ -129,15 +118,11 @@ class Coll_TrainingData(object):
                     end = cv2.getTickCount()
             # calculate streaming duration
                     print("Streaming duration: , %.2fs" % ((end - self.st_tick) / cv2.getTickFrequency()))
-
                     print(self.X.shape)
                     print(self.y.shape)
                     print("Total frame: ", self.total_frame)
                     print("Saved frame: ", self.saved_frame)
                     print("Dropped frame: ", self.total_frame - self.saved_frame)
-	       
-       
-
 if __name__ == '__main__':
     pg.init()
     scr=pg.display.set_mode((480,240))
