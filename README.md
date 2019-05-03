@@ -1,14 +1,20 @@
 # rosbot:
+
 a self driving rc car 
-![]()
-requirements:
--Ubuntu 16.04-Ros kinetic
--tensorflow 1.12.0
--keras 2.2.4
--using tensorflow as backend
--openCV 3.3.1-dev
--paygame 1.9.4
--numpy 1.15.4
-for simulation :
--Vrep 3.5
-#oji
+
+![](Screenshot%20from%202019-05-03%2015-45-01.png)
+
+### Prerequisites
+```
+Ubuntu 16.04-Ros kinetic
+tensorflow 1.12.0
+keras 2.2.4
+using tensorflow as backend
+openCV 3.3.1-dev
+paygame 1.9.4
+numpy 1.15.4
+```
+simulation :
+```
+Vrep 3.5
+```
