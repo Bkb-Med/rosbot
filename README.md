@@ -6,12 +6,12 @@ Self driving rc car using ROS ,CNN { keras and tensorflow as backend} , Rpi3 B+ 
 
 ### Prerequisites
 ```
-Ubuntu 16.04-Ros kinetic
+Ubuntu 16.04-
+Ros kinetic
 tensorflow 1.12.0
 keras 2.2.4
-using tensorflow as backend
-openCV 3.3.1-dev
-paygame 1.9.4
+openCV 3.3.1-dev "you should build opencv from source if you want to train your haarcascade xml "
+pygame 1.9.4
 numpy 1.15.4
 ```
 simulation :
