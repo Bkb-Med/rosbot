@@ -20,7 +20,7 @@ Vrep 3.5
 ```
 ## Getting Started
 
- *1-First thing you to do befor training your data is that you have to gather your images that show your trajectory of your road  so launch python script Collectingdata.py for that purpose which is recording keystrokes (left, right, forward)and images from raspbery pi 3 B+ that is publishing a compressed images because raw images provide too low FPS so for that and after building  all packages launch img_copressed.py
+ *1-First thing you should do befor training your data is that you have to gather your images that show the trajectory of your road  so launch python script Collectingdata.py and for  recording keystrokes (left, right, forward)and images from raspbery pi 3 B+ that is publishing a compressed images because raw images provide too low FPS so for that and after building  all packages launch img_copressed.py
  
 *2-Train your data .
 
