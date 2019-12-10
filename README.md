@@ -20,11 +20,11 @@ Vrep 3.5
 ```
 ## Getting Started
 
- *1-First thing you should do befor training your data is that you have to gather your images that show the trajectory of your road  so launch python script Collectingdata.py and for  recording keystrokes (left, right, forward)and images from raspbery pi 3 B+ that is publishing a compressed images because raw images provide too low FPS so for that and after building  all packages launch img_copressed.py
+ *1-First, you should gather images that show the trajectory of your road  ,after that launch python script Collectingdata.py, to  record keystrokes (left, right, forward)and published images .note that you'll recieve only compressed images because raw images will decrease the FPS .so after building  all packages launch img_copressed.py
  
 *2-Train your data .
 
-*3-To control the robot i used arduino uno and adafruit sheild i just added those things to learn about serial data , you can connect your RPI directly to your controller like L298D ...a second camera is added to detect road signs so launch the steerbot .py on the RPi ..
+*3-..a second camera is added to detect road signs so launch the steerbot .py on the RPi ..
 
 ### Author 
 * Boukbab mhamed
