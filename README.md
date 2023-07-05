@@ -20,9 +20,9 @@ Vrep 3.5
 ```
 ## Getting Started
 
- *1-First, imagesthat show the trajectory of the road should be gathered,after that launch python script Collectingdata.py, and record keystrokes (left, right, forward)as well as the published images. please note that w'll recieve only compressed images because raw images will decrease the FPS. so after building  all packages launch img_copressed.py
+ *1-The streaming images that show the trajectory of the road should be gathered, after that launch python script Collectingdata.py, and record keystrokes  (left, right, forward) "annotations along with the images" this will save and compress alltogether the published images from the main cam into 7zip archive. thus this collected should be trained in pc with (high performance GPU) we choosed to train our data in google collab, please note that w'll recieve only compressed images because raw images will decrease the FPS since we use RPI B+, we intend to use NVIdia nano in the future projects. so after building all the packages (C++ files) launch img_copressed.py
  
-*2-Train your data .
+*2-Train the data .
 
 *3-..a second camera is added to detect road signs so launch the steerbot.py on the RPi ..
 
