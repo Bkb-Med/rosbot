@@ -29,7 +29,7 @@ Vrep 3.5
 ### Author 
 * Boukbab mhamed
 
-for additional information contact at :
+for additional informations:
 ```
 boukbab.med@gmail.com
 ```
