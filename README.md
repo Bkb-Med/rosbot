@@ -20,11 +20,11 @@ Vrep 3.5
 ```
 ## Getting Started
 
- *1-First, you should gather images that show the trajectory of your road  ,after that launch python script Collectingdata.py, to  record keystrokes (left, right, forward)and published images .note that you'll recieve only compressed images because raw images will decrease the FPS .so after building  all packages launch img_copressed.py
+ *1-First, imagesthat show the trajectory of the road should be gathered,after that launch python script Collectingdata.py, and record keystrokes (left, right, forward)as well as the published images. please note that w'll recieve only compressed images because raw images will decrease the FPS. so after building  all packages launch img_copressed.py
  
 *2-Train your data .
 
-*3-..a second camera is added to detect road signs so launch the steerbot .py on the RPi ..
+*3-..a second camera is added to detect road signs so launch the steerbot.py on the RPi ..
 
 ### Author 
 * Boukbab mhamed
